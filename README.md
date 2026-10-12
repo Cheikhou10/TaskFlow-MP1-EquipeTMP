@@ -3,8 +3,11 @@
 Application Java de gestion de tâches (INF1763).
 
 ## Équipe
-- Cheikhou Ndiaye (chef de projet)
-- (membres à ajouter)
+- Aminata Samb
+- Mame Faty Gueye
+- Ndiaye Fatimata
+- Fatou Diakhaté
+- Cheikh Omar Diouf 
 
 ## Compilation
 javac -encoding UTF-8 src/TaskFlow.java

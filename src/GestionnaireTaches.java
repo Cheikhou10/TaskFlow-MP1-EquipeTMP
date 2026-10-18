@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class GestionnaireTaches {
     private final List<Tache> taches = new ArrayList<>();
@@ -7,8 +8,45 @@ public class GestionnaireTaches {
 
     // US-01 / US-02 / US-04
     public int ajouterTache(String titre, String priorite) {
-        throw new UnsupportedOperationException("US-01 / US-02 / US-04 : à implémenter");
+
+    if (titre == null || titre.trim().isEmpty()) {
+        throw new IllegalArgumentException(
+            "Le titre est obligatoire et ne peut pas être vide."
+        );
     }
+
+    titre = titre.trim();
+
+    if (priorite == null || priorite.trim().isEmpty()) {
+        priorite = "Normale";
+    }
+
+    switch (priorite.trim().toLowerCase(Locale.ROOT)) {
+        case "basse":
+            priorite = "Basse";
+            break;
+
+        case "normale":
+            priorite = "Normale";
+            break;
+
+        case "élevée":
+        case "elevee":
+            priorite = "Élevée";
+            break;
+
+        default:
+            throw new IllegalArgumentException(
+                "Priorité invalide. Choisissez Basse, Normale ou Élevée."
+            );
+    }
+
+    Tache nouvelleTache = new Tache(prochainId, titre);
+    nouvelleTache.setPriorite(priorite);
+    taches.add(nouvelleTache);
+
+    return prochainId++;
+}
 
     // US-05 / US-06
     public void afficherTaches() {

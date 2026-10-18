@@ -21,29 +21,32 @@ public class GestionnaireTaches {
         priorite = "Normale";
     }
 
-    switch (priorite.trim().toLowerCase(Locale.ROOT)) {
-        case "basse":
-            priorite = "Basse";
-            break;
 
-        case "normale":
-            priorite = "Normale";
-            break;
+        switch (priorite.trim().toLowerCase(Locale.ROOT)) {
+            case "basse":
+                priorite = "Basse";
+                break;
 
-        case "élevée":
-        case "elevee":
-            priorite = "Élevée";
-            break;
+            case "normale":
+                priorite = "Normale";
+                break;
 
-        default:
-            throw new IllegalArgumentException(
-                "Priorité invalide. Choisissez Basse, Normale ou Élevée."
-            );
-    }
+            case "élevée":
+            case "elevee":
+            case "haute":
+                priorite = "Élevée";
+                break;
 
-    Tache nouvelleTache = new Tache(prochainId, titre);
-    nouvelleTache.setPriorite(priorite);
-    taches.add(nouvelleTache);
+            default:
+                throw new IllegalArgumentException(
+                    "Priorité invalide. Choisissez Basse, Normale ou Élevée."
+                );
+        }
+
+        Tache nouvelleTache = new Tache(prochainId, titre);
+        nouvelleTache.setPriorite(priorite);
+        taches.add(nouvelleTache);
+
 
     return prochainId++;
 }

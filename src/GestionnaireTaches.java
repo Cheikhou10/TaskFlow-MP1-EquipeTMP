@@ -80,10 +80,51 @@ public class GestionnaireTaches {
     }
 
 
-    // US-09
-    public void modifierPriorite(int id, String priorite) {
-        throw new UnsupportedOperationException("US-09 : à implémenter");
+// US-09
+public void modifierPriorite(int id, String priorite) {
+    Tache tacheTrouvee = null;
+
+    for (Tache tache : taches) {
+        if (tache.getId() == id) {
+            tacheTrouvee = tache;
+            break;
+        }
     }
+
+    if (tacheTrouvee == null) {
+        System.out.println(
+            "Erreur : aucune tâche ne possède l'identifiant #" + id + "."
+        );
+        return;
+    }
+
+    if (priorite == null ||
+        !(priorite.equalsIgnoreCase("Basse") ||
+          priorite.equalsIgnoreCase("Normale") ||
+          priorite.equalsIgnoreCase("Élevée") ||
+          priorite.equalsIgnoreCase("Elevee"))) {
+
+        System.out.println(
+            "Erreur : priorité invalide. Choisissez Basse, Normale ou Élevée."
+        );
+        return;
+    }
+
+    if (priorite.equalsIgnoreCase("Basse")) {
+        priorite = "Basse";
+    } else if (priorite.equalsIgnoreCase("Normale")) {
+        priorite = "Normale";
+    } else {
+        priorite = "Élevée";
+    }
+
+    tacheTrouvee.setPriorite(priorite);
+
+    System.out.println(
+        "La priorité de la tâche #" + id +
+        " a été modifiée à " + priorite + "."
+    );
+}
 
     // US-10 / US-11 / US-12
     public void gererEcheance(int id, String date) {

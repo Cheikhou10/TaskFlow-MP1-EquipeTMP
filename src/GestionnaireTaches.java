@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
 
 public class GestionnaireTaches {
     private final List<Tache> taches = new ArrayList<>();
@@ -10,6 +11,19 @@ public class GestionnaireTaches {
         throw new UnsupportedOperationException("US-01 / US-02 / US-04 : à implémenter");
     }
 
+    // US-03 : Ajouter une tâche avec échéance
+    public int ajouterTacheAvecEcheance(String titre, String priorite, LocalDate echeance) {
+    if (echeance == null) {
+        throw new IllegalArgumentException("Une échéance est obligatoire");
+    }
+
+    Tache tache = new Tache(prochainId++, titre);
+    tache.setPriorite(priorite);
+    tache.setEcheance(echeance);
+    taches.add(tache);
+
+    return tache.getId();
+}
     // US-05 / US-06
     public void afficherTaches() {
         throw new UnsupportedOperationException("US-05 / US-06 : à implémenter");

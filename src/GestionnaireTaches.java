@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.text.Normalizer;
+
 
 public class GestionnaireTaches {
     private final List<Tache> taches = new ArrayList<>();
@@ -21,28 +23,34 @@ public class GestionnaireTaches {
         priorite = "Normale";
     }
 
+     String prioriteNormalisee = priorite.trim().toLowerCase(Locale.ROOT);
 
-        switch (priorite.trim().toLowerCase(Locale.ROOT)) {
-            case "basse":
-                priorite = "Basse";
-                break;
+     prioriteNormalisee = prioriteNormalisee
+        .replace("é", "e")
+        .replace("è", "e")
+        .replace("ê", "e")
+        .replace("ë", "e");
 
-            case "normale":
-                priorite = "Normale";
-                break;
+      switch (prioriteNormalisee) {
+    case "basse":
+        priorite = "Basse";
+        break;
 
-            case "élevée":
-            case "elevee":
-            case "haute":
-                priorite = "Élevée";
-                break;
+    case "normale":
+        priorite = "Normale";
+        break;
 
-            default:
-                throw new IllegalArgumentException(
-                    "Priorité invalide. Choisissez Basse, Normale ou Élevée."
-                );
-        }
+    case "elevee":
+    case "haute":
+        priorite = "Élevée";
+        break;
 
+    default:
+        throw new IllegalArgumentException(
+            "Priorité invalide. Choisissez Basse, Normale ou Élevée."
+        );
+}
+        
         Tache nouvelleTache = new Tache(prochainId, titre);
         nouvelleTache.setPriorite(priorite);
         taches.add(nouvelleTache);

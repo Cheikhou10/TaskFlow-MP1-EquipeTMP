@@ -15,10 +15,32 @@ public class GestionnaireTaches {
         throw new UnsupportedOperationException("US-05 / US-06 : à implémenter");
     }
 
+    
     // US-07 / US-08
     public void marquerTerminee(int id) {
-        throw new UnsupportedOperationException("US-07 / US-08 : à implémenter");
+        Tache tacheTrouvee = null;
+
+        for (Tache tache : taches) {
+            if (tache.getId() == id) {
+                tacheTrouvee = tache;
+                break;
+            }
+        }
+
+        if (tacheTrouvee == null) {
+            System.out.println("Erreur : aucune tâche ne possède l'identifiant #" + id + ".");
+            return;
+        }
+
+        if (tacheTrouvee.isTerminee()) {
+            System.out.println("La tâche #" + id + " est déjà terminée.");
+            return;
+        }
+
+        tacheTrouvee.setTerminee(true);
+        System.out.println("La tâche #" + id + " a été marquée comme terminée.");
     }
+
 
     // US-09
     public void modifierPriorite(int id, String priorite) {

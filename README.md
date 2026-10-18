@@ -8,34 +8,38 @@ Application Java en ligne de commande pour gérer une liste de tâches.
 - Ndiaye Fatimata
 - Fatou Diakhaté
 - Cheikh Omar Diouf
-## Fonctionnalités
 
-- Ajouter une tâche (titre, priorité, échéance)
-- Afficher la liste des tâches
-- Marquer une tâche comme terminée
-- Modifier la priorité
-- Gérer l'échéance (attribuer, modifier, retirer)
-- Sauvegarder et recharger les données
+## Fonctionnalités implémentées
+- Ajouter une tâche avec un titre et une priorité.
+- Marquer une tâche comme terminée.
+- Signaler un identifiant inconnu lors du marquage ou du changement de priorité.
+- Modifier la priorité d'une tâche.
+
+## Fonctionnalités à compléter
+- Afficher la liste des tâches.
+- Attribuer, modifier et retirer une échéance.
+- Sauvegarder et recharger les données.
 
 ## Prérequis
-
-- JDK 17 (à préciser)
-- Git
+- JDK 17 ou une version compatible avec le projet.
+- Git.
 
 ## Compilation
 
-javac -encoding UTF-8 src/TaskFlow.java
+```bash
+javac -encoding UTF-8 src/*.java
+```
 
 ## Exécution
 
+```bash
 java -cp src TaskFlow
+```
 
 ## Structure du projet
-
-- `src/` : code source Java
-- `docs/` : documentation (organisation, vérifications)
-- `CONTRIBUTING.md` : règles de collaboration
+- `src/` : code source Java.
+- `docs/` : documentation sur l'organisation et les vérifications.
+- `CONTRIBUTING.md` : règles de collaboration.
 
 ## Limites connues
-
-(à compléter)
+L'affichage des tâches, la gestion des échéances, la sauvegarde et le rechargement des données restent à implémenter.

@@ -50,8 +50,16 @@ public class GestionnaireTaches {
 
     // US-05 / US-06
     public void afficherTaches() {
-        throw new UnsupportedOperationException("US-05 / US-06 : à implémenter");
+    if (taches.isEmpty()) {
+        System.out.println("Aucune tâche à afficher.");
+        return;
     }
+
+    System.out.println("Liste des tâches :");
+    for (Tache tache : taches) {
+        System.out.println(tache);
+    }
+}
 
     
     // US-07 / US-08

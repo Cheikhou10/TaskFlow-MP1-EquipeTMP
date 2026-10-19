@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
 import java.util.Locale;
 
 public class GestionnaireTaches {
@@ -7,46 +8,65 @@ public class GestionnaireTaches {
     private int prochainId = 1;
 
     // US-01 / US-02 / US-04
+    // US-01 / US-02 / US-04
     public int ajouterTache(String titre, String priorite) {
-
-    if (titre == null || titre.trim().isEmpty()) {
-        throw new IllegalArgumentException(
-            "Le titre est obligatoire et ne peut pas être vide."
-        );
-    }
-
-    titre = titre.trim();
-
-    if (priorite == null || priorite.trim().isEmpty()) {
-        priorite = "Normale";
-    }
-
-    switch (priorite.trim().toLowerCase(Locale.ROOT)) {
-        case "basse":
-            priorite = "Basse";
-            break;
-
-        case "normale":
-            priorite = "Normale";
-            break;
-
-        case "élevée":
-        case "elevee":
-            priorite = "Élevée";
-            break;
-
-        default:
+        if (titre == null || titre.trim().isEmpty()) {
             throw new IllegalArgumentException(
-                "Priorité invalide. Choisissez Basse, Normale ou Élevée."
+                "Le titre est obligatoire et ne peut pas être vide."
             );
+        }
+
+        titre = titre.trim();
+
+        if (priorite == null || priorite.trim().isEmpty()) {
+            priorite = "Normale";
+        }
+
+        switch (priorite.trim().toLowerCase(Locale.ROOT)) {
+            case "basse":
+                priorite = "Basse";
+                break;
+            case "normale":
+                priorite = "Normale";
+                break;
+            case "élevée":
+            case "elevee":
+                priorite = "Élevée";
+                break;
+            default:
+                throw new IllegalArgumentException(
+                    "Priorité invalide. Choisissez Basse, Normale ou Élevée."
+                );
+        }
+
+        Tache nouvelleTache = new Tache(prochainId++, titre);
+        nouvelleTache.setPriorite(priorite);
+        taches.add(nouvelleTache);
+
+        return nouvelleTache.getId();
     }
 
-    Tache nouvelleTache = new Tache(prochainId, titre);
-    nouvelleTache.setPriorite(priorite);
-    taches.add(nouvelleTache);
+    // US-03 : Ajouter une tâche avec échéance
+    public int ajouterTacheAvecEcheance(
+            String titre, String priorite, LocalDate echeance) {
 
-    return prochainId++;
-}
+        if (echeance == null) {
+            throw new IllegalArgumentException(
+                "Une échéance est obligatoire"
+            );
+        }
+
+        int id = ajouterTache(titre, priorite);
+
+        for (Tache tache : taches) {
+            if (tache.getId() == id) {
+                tache.setEcheance(echeance);
+                break;
+            }
+        }
+
+        return id;
+    }
 
     // US-05 / US-06
     public void afficherTaches() {

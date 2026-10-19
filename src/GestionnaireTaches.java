@@ -165,10 +165,18 @@ try {
     
     return;
 }
-tacheTrouvee.setEcheance(nouvelleDate);
-System.out.println("L'échéance de la tâche #" + id + " est fixée au " + nouvelleDate + ".");
-} 
+boolean avaitEcheance = tacheTrouvee.getEcheance() != null;
 
+tacheTrouvee.setEcheance(nouvelleDate);
+
+if (avaitEcheance) {
+    System.out.println("L'échéance de la tâche #" + id
+        + " a été modifiée au " + nouvelleDate + ".");
+} else {
+    System.out.println("L'échéance de la tâche #" + id
+        + " est fixée au " + nouvelleDate + ".");
+}
+}
     public void sauvegarder() {
         throw new UnsupportedOperationException("US-13 / US-17 : à implémenter");
     }

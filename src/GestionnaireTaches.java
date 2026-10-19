@@ -147,6 +147,11 @@ public void modifierPriorite(int id, String priorite) {
     );
     return;
 } 
+if (date != null && date.isEmpty()) {
+    tacheTrouvee.setEcheance(null);
+    System.out.println("L'échéance de la tâche #" + id + " a été retirée.");
+    return;
+}
 if (date == null || !date.matches("\\d{4}-\\d{2}-\\d{2}")) {
     System.out.println("Erreur : la date doit être au format AAAA-MM-JJ.");
     return;

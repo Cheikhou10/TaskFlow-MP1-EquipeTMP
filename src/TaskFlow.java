@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class TaskFlow {
-    private static final GestionnaireTaches gestionnaire = new GestionnaireTaches();
     private static final Scanner scanner = new Scanner(System.in);
+    private static final GestionnaireTaches gestionnaire = new GestionnaireTaches();
 
     public static void main(String[] args) {
         try {
@@ -17,14 +17,29 @@ public class TaskFlow {
             String choix = scanner.nextLine().trim();
             try {
                 switch (choix) {
-                    case "1": ajouterTache(); break;
-                    case "2": gestionnaire.afficherTaches(); break;
-                    case "3": marquerTerminee(); break;
-                    case "4": modifierPriorite(); break;
-                    case "5": gererEcheance(); break;
-                    case "6": gestionnaire.sauvegarder(); break;
-                    case "0": continuer = false; break;
-                    default: System.out.println("Choix invalide.");
+                    case "1":
+                        ajouterTache();
+                        break;
+                    case "2":
+                        gestionnaire.afficherTaches();
+                        break;
+                    case "3":
+                        marquerTerminee();
+                        break;
+                    case "4":
+                        modifierPriorite();
+                        break;
+                    case "5":
+                        gererEcheance();
+                        break;
+                    case "6":
+                        gestionnaire.sauvegarder();
+                        break;
+                    case "0":
+                        continuer = false;
+                        break;
+                    default:
+                        System.out.println("Choix invalide.");
                 }
             } catch (UnsupportedOperationException e) {
                 System.out.println("[Non implémenté] " + e.getMessage());
@@ -53,9 +68,10 @@ public class TaskFlow {
     private static void ajouterTache() {
         System.out.print("Titre : ");
         String titre = scanner.nextLine();
-        System.out.print("Priorité (Basse/Normale/Élevée) [Normale] : ");
+        System.out.print("Priorité (Basse/Normale/Elevee) [Normale] : ");
         String priorite = scanner.nextLine().trim();
-        if (priorite.isEmpty()) priorite = "Normale";
+        if (priorite.isEmpty())
+            priorite = "Normale";
         int id = gestionnaire.ajouterTache(titre, priorite);
         System.out.println("Tâche ajoutée avec l'identifiant #" + id);
     }
@@ -69,7 +85,7 @@ public class TaskFlow {
     private static void modifierPriorite() {
         System.out.print("Identifiant : ");
         int id = Integer.parseInt(scanner.nextLine().trim());
-        System.out.print("Nouvelle priorité (Basse/Normale/Élevée) : ");
+        System.out.print("Nouvelle priorité (Basse/Normale/Elevee) : ");
         String priorite = scanner.nextLine().trim();
         gestionnaire.modifierPriorite(id, priorite);
     }

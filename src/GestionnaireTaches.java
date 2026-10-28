@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
 
 public class GestionnaireTaches {
     private final List<Tache> taches = new ArrayList<>();
@@ -110,12 +114,45 @@ public class GestionnaireTaches {
         System.out.println("La priorité de la tâche #" + id + " a été modifiée à " + priorite + ".");
     }
 
-    // US-10 / US-11 / US-12 (Pas encore fusionné par Fatygueye)
-    public void gererEcheance(int id, String date) {
-        throw new UnsupportedOperationException("US-10 / US-11 / US-12 : à implémenter");
-    }
+    // US-10 / US-11 / US-12
+   public void gererEcheance(int id, String date) {
 
-    // US-13 / US-17 (CODE DE CHEIKHOU)
+    Tache tacheTrouvee = null;
+
+    for (Tache tache : taches) {
+        if (tache.getId() == id) {
+            tacheTrouvee = tache;
+            break;
+        }
+    }
+   if (tacheTrouvee == null) {
+    System.out.println(
+        "Erreur : aucune tâche ne possède l'identifiant #" + id + "."
+    );
+    return;
+} 
+if (date == null || !date.matches("\\d{4}-\\d{2}-\\d{2}")) {
+    System.out.println("Erreur : la date doit être au format AAAA-MM-JJ.");
+    return;
+}
+
+DateTimeFormatter format = DateTimeFormatter
+        .ofPattern("uuuu-MM-dd")
+        .withResolverStyle(ResolverStyle.STRICT);
+
+LocalDate nouvelleDate;
+
+try {
+    nouvelleDate = LocalDate.parse(date, format);
+} catch (DateTimeParseException e) {
+    System.out.println("Erreur : la date saisie est invalide.");
+    
+    return;
+}
+tacheTrouvee.setEcheance(nouvelleDate);
+System.out.println("L'échéance de la tâche #" + id + " est fixée au " + nouvelleDate + ".");
+} 
+
     public void sauvegarder() {
         java.io.File dossier = new java.io.File("data");
         if (!dossier.exists())

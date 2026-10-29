@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
 import java.util.Locale;
+import java.text.Normalizer;
+
 
 public class GestionnaireTaches {
     private final List<Tache> taches = new ArrayList<>();
@@ -9,65 +11,75 @@ public class GestionnaireTaches {
 
     // US-01 / US-02 / US-04
     // US-01 / US-02 / US-04
-    public int ajouterTache(String titre, String priorite) {
-        if (titre == null || titre.trim().isEmpty()) {
-            throw new IllegalArgumentException(
-                "Le titre est obligatoire et ne peut pas être vide."
-            );
-        }
+    // US-01 / US-02 / US-04
+public int ajouterTache(String titre, String priorite) {
 
-        titre = titre.trim();
+    if (titre == null || titre.trim().isEmpty()) {
+        throw new IllegalArgumentException(
+            "Le titre est obligatoire et ne peut pas être vide."
+        );
+    }
 
-        if (priorite == null || priorite.trim().isEmpty()) {
+    titre = titre.trim();
+
+    if (priorite == null || priorite.trim().isEmpty()) {
+        priorite = "Normale";
+    }
+
+    String prioriteNormalisee = priorite.trim().toLowerCase(Locale.ROOT);
+
+    prioriteNormalisee = Normalizer.normalize(
+        prioriteNormalisee, Normalizer.Form.NFD
+    ).replaceAll("\\p{M}", "");
+
+    switch (prioriteNormalisee) {
+        case "basse":
+            priorite = "Basse";
+            break;
+
+        case "normale":
             priorite = "Normale";
-        }
+            break;
 
-        switch (priorite.trim().toLowerCase(Locale.ROOT)) {
-            case "basse":
-                priorite = "Basse";
-                break;
-            case "normale":
-                priorite = "Normale";
-                break;
-            case "élevée":
-            case "elevee":
-                priorite = "Élevée";
-                break;
-            default:
-                throw new IllegalArgumentException(
-                    "Priorité invalide. Choisissez Basse, Normale ou Élevée."
-                );
-        }
+        case "elevee":
+        case "haute":
+            priorite = "Élevée";
+            break;
 
-        Tache nouvelleTache = new Tache(prochainId++, titre);
-        nouvelleTache.setPriorite(priorite);
-        taches.add(nouvelleTache);
-
-        return nouvelleTache.getId();
-    }
-
-    // US-03 : Ajouter une tâche avec échéance
-    public int ajouterTacheAvecEcheance(
-            String titre, String priorite, LocalDate echeance) {
-
-        if (echeance == null) {
+        default:
             throw new IllegalArgumentException(
-                "Une échéance est obligatoire"
+                "Priorité invalide. Choisissez Basse, Normale ou Élevée."
             );
-        }
-
-        int id = ajouterTache(titre, priorite);
-
-        for (Tache tache : taches) {
-            if (tache.getId() == id) {
-                tache.setEcheance(echeance);
-                break;
-            }
-        }
-
-        return id;
     }
 
+    Tache nouvelleTache = new Tache(prochainId++, titre);
+    nouvelleTache.setPriorite(priorite);
+    taches.add(nouvelleTache);
+
+    return nouvelleTache.getId();
+}
+
+// US-03 : Ajouter une tâche avec échéance
+public int ajouterTacheAvecEcheance(
+        String titre, String priorite, LocalDate echeance) {
+
+    if (echeance == null) {
+        throw new IllegalArgumentException(
+            "Une échéance est obligatoire."
+        );
+    }
+
+    int id = ajouterTache(titre, priorite);
+
+    for (Tache tache : taches) {
+        if (tache.getId() == id) {
+            tache.setEcheance(echeance);
+            break;
+        }
+    }
+
+    return id;
+}
     // US-05 / US-06
     public void afficherTaches() {
         throw new UnsupportedOperationException("US-05 / US-06 : à implémenter");
@@ -81,7 +93,7 @@ public class GestionnaireTaches {
         for (Tache tache : taches) {
             if (tache.getId() == id) {
                 tacheTrouvee = tache;
-                break;
+                
             }
         }
 

@@ -1,12 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
 import java.util.Locale;
+import java.text.Normalizer;
 
 public class GestionnaireTaches {
     private final List<Tache> taches = new ArrayList<>();
     private int prochainId = 1;
 
-    // US-01 / US-02 / US-04 (Code d'Aminata)
+    // US-01 / US-02 / US-04
     public int ajouterTache(String titre, String priorite) {
         if (titre == null || titre.trim().isEmpty()) {
             throw new IllegalArgumentException("Le titre est obligatoire et ne peut pas être vide.");
@@ -18,11 +20,7 @@ public class GestionnaireTaches {
         }
 
         String prioriteNormalisee = priorite.trim().toLowerCase(Locale.ROOT);
-        prioriteNormalisee = prioriteNormalisee
-                .replace("é", "e")
-                .replace("è", "e")
-                .replace("ê", "e")
-                .replace("ë", "e");
+        prioriteNormalisee = Normalizer.normalize(prioriteNormalisee, Normalizer.Form.NFD).replaceAll("\\p{M}", "");
 
         switch (prioriteNormalisee) {
             case "basse":
@@ -36,7 +34,7 @@ public class GestionnaireTaches {
                 priorite = "Élevée";
                 break;
             default:
-                throw new IllegalArgumentException("Priorité invalide. Choisissez Basse, Normale ou Elevee.");
+                throw new IllegalArgumentException("Priorité invalide. Choisissez Basse, Normale ou Élevée.");
         }
 
         Tache nouvelleTache = new Tache(prochainId++, titre);
@@ -44,6 +42,24 @@ public class GestionnaireTaches {
         taches.add(nouvelleTache);
 
         return nouvelleTache.getId();
+    }
+
+    // US-03 : Ajouter une tâche avec échéance
+    public int ajouterTacheAvecEcheance(String titre, String priorite, LocalDate echeance) {
+        if (echeance == null) {
+            throw new IllegalArgumentException("Une échéance est obligatoire.");
+        }
+
+        int id = ajouterTache(titre, priorite);
+
+        for (Tache tache : taches) {
+            if (tache.getId() == id) {
+                tache.setEcheance(echeance);
+                break;
+            }
+        }
+
+        return id;
     }
 
     // US-05 / US-06 (Pas encore fusionné par Fatou)

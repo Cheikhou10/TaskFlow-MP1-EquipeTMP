@@ -46,9 +46,16 @@ public class GestionnaireTaches {
         return nouvelleTache.getId();
     }
 
-    // US-05 / US-06 (Pas encore fusionné par Fatou)
+    // US-05 / US-06 (Code fusionné)
     public void afficherTaches() {
-        throw new UnsupportedOperationException("US-05 / US-06 : à implémenter");
+        if (taches.isEmpty()) {
+            System.out.println("Aucune tâche à afficher.");
+            return;
+        }
+        System.out.println("Liste des tâches :");
+        for (Tache tache : taches) {
+            System.out.println(tache);
+        }
     }
 
     // US-07 / US-08 (Code de Fatima)

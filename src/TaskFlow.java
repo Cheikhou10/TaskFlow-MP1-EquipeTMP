@@ -127,4 +127,4 @@ System.out.println("Tâche ajoutée : " + nomTache);
         gestionnaire.gererEcheance(id, date);
  main
     }
-}
+}corrige moi tout les fautes

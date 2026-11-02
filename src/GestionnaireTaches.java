@@ -10,7 +10,7 @@ public class GestionnaireTaches {
     private final List<Tache> taches = new ArrayList<>();
     private int prochainId = 1;
 
-    // US-01 / US-02 / US-04 (Code d'Aminata)
+    // US-01 / US-02 / US-04 (Aminata)
     public int ajouterTache(String titre, String priorite) {
         if (titre == null || titre.trim().isEmpty()) {
             throw new IllegalArgumentException("Le titre est obligatoire et ne peut pas être vide.");
@@ -50,7 +50,7 @@ public class GestionnaireTaches {
         return nouvelleTache.getId();
     }
 
-    // US-05 / US-06 (Code fusionné)
+    // US-05 / US-06 (Fatou)
     public void afficherTaches() {
         if (taches.isEmpty()) {
             System.out.println("Aucune tâche à afficher.");
@@ -62,7 +62,7 @@ public class GestionnaireTaches {
         }
     }
 
-    // US-07 / US-08 (Code de Fatima)
+    // US-07 / US-08 (Fatima)
     public void marquerTerminee(int id) {
         Tache tacheTrouvee = null;
 
@@ -87,7 +87,7 @@ public class GestionnaireTaches {
         System.out.println("La tâche #" + id + " a été marquée comme terminée.");
     }
 
-    // US-09 (Code de Fatima)
+    // US-09 (Fatima)
     public void modifierPriorite(int id, String priorite) {
         Tache tacheTrouvee = null;
 
@@ -121,58 +121,57 @@ public class GestionnaireTaches {
         System.out.println("La priorité de la tâche #" + id + " a été modifiée à " + priorite + ".");
     }
 
-    // US-10 / US-11 / US-12
-   public void gererEcheance(int id, String date) {
+    // US-10 / US-11 / US-12 (Fatygueye)
+    public void gererEcheance(int id, String date) {
+        Tache tacheTrouvee = null;
 
-    Tache tacheTrouvee = null;
+        for (Tache tache : taches) {
+            if (tache.getId() == id) {
+                tacheTrouvee = tache;
+                break;
+            }
+        }
+        
+        if (tacheTrouvee == null) {
+            System.out.println("Erreur : aucune tâche ne possède l'identifiant #" + id + ".");
+            return;
+        } 
+        
+        if (date != null && date.isEmpty()) {
+            tacheTrouvee.setEcheance(null);
+            System.out.println("L'échéance de la tâche #" + id + " a été retirée.");
+            return;
+        }
+        
+        if (date == null || !date.matches("\\d{4}-\\d{2}-\\d{2}")) {
+            System.out.println("Erreur : la date doit être au format AAAA-MM-JJ.");
+            return;
+        }
 
-    for (Tache tache : taches) {
-        if (tache.getId() == id) {
-            tacheTrouvee = tache;
-            break;
+        DateTimeFormatter format = DateTimeFormatter
+                .ofPattern("uuuu-MM-dd")
+                .withResolverStyle(ResolverStyle.STRICT);
+
+        LocalDate nouvelleDate;
+
+        try {
+            nouvelleDate = LocalDate.parse(date, format);
+        } catch (DateTimeParseException e) {
+            System.out.println("Erreur : la date saisie est invalide.");
+            return;
+        }
+        
+        boolean avaitEcheance = tacheTrouvee.getEcheance() != null;
+        tacheTrouvee.setEcheance(nouvelleDate);
+
+        if (avaitEcheance) {
+            System.out.println("L'échéance de la tâche #" + id + " a été modifiée au " + nouvelleDate + ".");
+        } else {
+            System.out.println("L'échéance de la tâche #" + id + " est fixée au " + nouvelleDate + ".");
         }
     }
-   if (tacheTrouvee == null) {
-    System.out.println(
-        "Erreur : aucune tâche ne possède l'identifiant #" + id + "."
-    );
-    return;
-} 
-if (date != null && date.isEmpty()) {
-    tacheTrouvee.setEcheance(null);
-    System.out.println("L'échéance de la tâche #" + id + " a été retirée.");
-    return;
-}
-if (date == null || !date.matches("\\d{4}-\\d{2}-\\d{2}")) {
-    System.out.println("Erreur : la date doit être au format AAAA-MM-JJ.");
-    return;
-}
 
-DateTimeFormatter format = DateTimeFormatter
-        .ofPattern("uuuu-MM-dd")
-        .withResolverStyle(ResolverStyle.STRICT);
-
-LocalDate nouvelleDate;
-
-try {
-    nouvelleDate = LocalDate.parse(date, format);
-} catch (DateTimeParseException e) {
-    System.out.println("Erreur : la date saisie est invalide.");
-    
-    return;
-}
-boolean avaitEcheance = tacheTrouvee.getEcheance() != null;
-
-tacheTrouvee.setEcheance(nouvelleDate);
-
-if (avaitEcheance) {
-    System.out.println("L'échéance de la tâche #" + id
-        + " a été modifiée au " + nouvelleDate + ".");
-} else {
-    System.out.println("L'échéance de la tâche #" + id
-        + " est fixée au " + nouvelleDate + ".");
-}
-}
+    // US-13 / US-17 (Cheikhou)
     public void sauvegarder() {
         java.io.File dossier = new java.io.File("data");
         if (!dossier.exists())
@@ -194,7 +193,7 @@ if (avaitEcheance) {
         }
     }
 
-    // US-14 / US-15 / US-16 (CODE DE CHEIKHOU)
+    // US-14 / US-15 / US-16 (Cheikhou)
     public void recharger() {
         java.io.File fichier = new java.io.File("data/taches.csv");
         if (!fichier.exists()) {
@@ -209,8 +208,7 @@ if (avaitEcheance) {
             String ligne;
             while ((ligne = reader.readLine()) != null) {
                 ligne = ligne.trim();
-                if (ligne.isEmpty())
-                    continue;
+                if (ligne.isEmpty()) continue;
 
                 String[] parts = ligne.split(";", -1);
                 if (parts.length < 5) {
@@ -232,8 +230,7 @@ if (avaitEcheance) {
                 t.setTerminee(terminee);
                 taches.add(t);
 
-                if (id > maxId)
-                    maxId = id;
+                if (id > maxId) maxId = id;
             }
             prochainId = maxId + 1;
             System.out.println("Données rechargées : " + taches.size() + " tâche(s).");
@@ -244,15 +241,7 @@ if (avaitEcheance) {
         }
     }
 
-    public List<Tache> getTaches() {
-        return taches;
-    }
-
-    public int getProchainId() {
-        return prochainId;
-    }
-
-    public void setProchainId(int id) {
-        this.prochainId = id;
-    }
+    public List<Tache> getTaches() { return taches; }
+    public int getProchainId() { return prochainId; }
+    public void setProchainId(int id) { this.prochainId = id; }
 }

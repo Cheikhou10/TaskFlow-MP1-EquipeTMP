@@ -1,4 +1,6 @@
 *.class
 out/
 .env
+
+src/GestionnaireTaches.sauvegarde.txt
 data/

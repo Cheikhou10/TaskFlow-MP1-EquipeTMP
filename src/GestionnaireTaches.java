@@ -178,14 +178,14 @@ public class GestionnaireTaches {
             dossier.mkdirs();
 
         try (java.io.PrintWriter writer = new java.io.PrintWriter("data/taches.csv")) {
-            for (Tache t : taches) {
-                String ech = (t.getEcheance() == null) ? "" : t.getEcheance().toString();
+            for (Tache tache : taches) {
+                String echeance = (tache.getEcheance() == null) ? "" : tache.getEcheance().toString();
                 writer.println(
-                        t.getId() + ";" +
-                                t.getTitre() + ";" +
-                                t.getPriorite() + ";" +
-                                ech + ";" +
-                                t.isTerminee());
+                        tache.getId() + ";" +
+                                tache.getTitre() + ";" +
+                                tache.getPriorite() + ";" +
+                                echeance + ";" +
+                                tache.isTerminee());
             }
             System.out.println("Sauvegarde réussie : " + taches.size() + " tâche(s).");
         } catch (java.io.IOException e) {
@@ -202,7 +202,7 @@ public class GestionnaireTaches {
         }
 
         taches.clear();
-        int maxId = 0;
+        int identifiantMaximum = 0;
 
         try (java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader(fichier))) {
             String ligne;
@@ -210,29 +210,32 @@ public class GestionnaireTaches {
                 ligne = ligne.trim();
                 if (ligne.isEmpty()) continue;
 
-                String[] parts = ligne.split(";", -1);
-                if (parts.length < 5) {
+                String[] colonnes = ligne.split(";", -1);
+                if (colonnes.length < 5) {
                     System.out.println("Ligne ignorée (format invalide) : " + ligne);
                     continue;
                 }
 
-                int id = Integer.parseInt(parts[0]);
-                String titre = parts[1];
-                String priorite = parts[2];
-                String echStr = parts[3];
-                boolean terminee = Boolean.parseBoolean(parts[4]);
+                int identifiant = Integer.parseInt(colonnes[0]);
+                String titre = colonnes[1];
+                String priorite = colonnes[2];
+                String echeanceTexte = colonnes[3];
+                boolean terminee = Boolean.parseBoolean(colonnes[4]);
 
-                Tache t = new Tache(id, titre);
-                t.setPriorite(priorite);
-                if (!echStr.isEmpty()) {
-                    t.setEcheance(java.time.LocalDate.parse(echStr));
+                Tache tache = new Tache(identifiant, titre);
+                tache.setPriorite(priorite);
+                if (!echeanceTexte.isEmpty()) {
+                    tache.setEcheance(java.time.LocalDate.parse(echeanceTexte));
                 }
-                t.setTerminee(terminee);
-                taches.add(t);
+                tache.setTerminee(terminee);
+                taches.add(tache);
 
-                if (id > maxId) maxId = id;
+                if (identifiant > identifiantMaximum) {
+                    identifiantMaximum = identifiant;
+                }
             }
-            prochainId = maxId + 1;
+
+            prochainId = identifiantMaximum + 1;
             System.out.println("Données rechargées : " + taches.size() + " tâche(s).");
         } catch (Exception e) {
             System.out.println("Fichier illisible : " + e.getMessage());

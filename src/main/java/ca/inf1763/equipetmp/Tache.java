@@ -52,7 +52,7 @@ public class Tache {
     @Override
     public String toString() {
         String echeanceTexte = (echeance == null) ? "aucune" : echeance.toString();
-        String statut = terminee ? "Terminée" : "À faire";
+        String statut = terminee ? "Terminee" : "A faire";
         return "#" + id + " | " + titre + " | " + priorite + " | " + echeanceTexte + " | " + statut;
     }
 }

@@ -1,26 +1,23 @@
+package ca.inf1763.equipetmp;
 
-        
-       import java.util.Scanner;
+import java.util.Scanner;
 
 public class TaskFlow {
-    // Initialisation des variables statiques
     private static final GestionnaireTaches gestionnaire = new GestionnaireTaches();
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         try {
             gestionnaire.recharger();
-        } catch (UnsupportedOperationException e) {
-            System.out.println("[Non implémenté] " + e.getMessage());
         } catch (Exception e) {
             System.out.println("Erreur lors du chargement : " + e.getMessage());
         }
 
         boolean continuer = true;
-      while (continuer) {
-            afficherMenu(); // Appel de la méthode pour afficher le menu
+        while (continuer) {
+            afficherMenu();
             String choix = scanner.nextLine().trim();
-            
+
             try {
                 switch (choix) {
                     case "1":
@@ -32,15 +29,6 @@ public class TaskFlow {
                     case "3":
                         marquerTerminee();
                         break;
- feature/us-05-afficher-taches
-                    case "4": // AJOUT IMPORTANT : Option pour quitter
-                        continuer = false;
-                        System.out.println("Merci d'avoir utilisé TaskFlow. Au revoir !");
-                        break;
-                    default:
-                        System.out.println("❌ Choix invalide. Veuillez taper un chiffre entre 1 et 4.");
-                        break;
-
                     case "4":
                         modifierPriorite();
                         break;
@@ -54,55 +42,47 @@ public class TaskFlow {
                         continuer = false;
                         break;
                     default:
-                        System.out.println("Choix invalide.");
-main
+                        System.out.println("❌ Choix invalide.");
                 }
+            } catch (NumberFormatException e) {
+                System.out.println("❌ Erreur : l'identifiant doit être un nombre.");
             } catch (Exception e) {
                 System.out.println("❌ Une erreur est survenue : " + e.getMessage());
             }
         }
-        
-        scanner.close(); // Bonne pratique : fermer le scanner à la fin
+        scanner.close();
+        System.out.println("Merci d'avoir utilisé TaskFlow. Au revoir !");
     }
-
-    // --- MÉTHODES À COMPLÉTER PLUS TARD ---
 
     private static void afficherMenu() {
         System.out.println("\n=== MENU TASKFLOW ===");
         System.out.println("1. Ajouter une tâche");
         System.out.println("2. Afficher les tâches");
         System.out.println("3. Marquer une tâche comme terminée");
-        System.out.println("4. Quitter");
+        System.out.println("4. Modifier la priorité");
+        System.out.println("5. Gérer l'échéance");
+        System.out.println("6. Sauvegarder");
+        System.out.println("0. Quitter");
         System.out.print("Votre choix : ");
     }
 
     private static void ajouterTache() {
- feature/us-05-afficher-taches
-        System.out.print("Entrez le nom de la tâche à ajouter : ");
-        String nomTache = scanner.nextLine().trim();
-        
-        // À adapter selon ce que tu as dans GestionnaireTaches.java
-        // Exemple : gestionnaire.ajouter(new Tache(nomTache));
-       gestionnaire.ajouterTache(nomTache, "Normale");
-System.out.println("Tâche ajoutée : " + nomTache);
-    }
-
-    private static void marquerTerminee() {
-        System.out.print("Entrez le nom ou l'ID de la tâche terminée : ");
-        String nomTache = scanner.nextLine().trim();
-        
-        // À adapter selon ce que tu as dans GestionnaireTaches.java
-        // Exemple : gestionnaire.marquerTerminee(nomTache);
-        System.out.println("✅ Tâche '" + nomTache + "' marquée comme terminée (à lier avec GestionnaireTaches).");
-
         System.out.print("Titre : ");
-        String titre = scanner.nextLine();
+        String titre = scanner.nextLine().trim();
+
         System.out.print("Priorité (Basse/Normale/Elevee) [Normale] : ");
         String priorite = scanner.nextLine().trim();
         if (priorite.isEmpty())
             priorite = "Normale";
+
         int id = gestionnaire.ajouterTache(titre, priorite);
         System.out.println("Tâche ajoutée avec l'identifiant #" + id);
+
+        System.out.print("Échéance (AAAA-MM-JJ, vide pour ignorer) : ");
+        String date = scanner.nextLine().trim();
+        if (!date.isEmpty()) {
+            gestionnaire.gererEcheance(id, date);
+        }
     }
 
     private static void marquerTerminee() {
@@ -125,6 +105,5 @@ System.out.println("Tâche ajoutée : " + nomTache);
         System.out.print("Date (AAAA-MM-JJ, vide pour retirer) : ");
         String date = scanner.nextLine().trim();
         gestionnaire.gererEcheance(id, date);
- main
     }
-}corrige moi tout les fautes
+}

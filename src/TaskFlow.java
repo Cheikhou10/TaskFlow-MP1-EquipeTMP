@@ -28,7 +28,7 @@ public class TaskFlow {
                         ajouterTache();
                         break;
                     case "2":
-                        gestionnaire.afficherTaches();
+                        afficherTaches();
                         break;
                     case "3":
                         marquerTerminee();
@@ -120,6 +120,10 @@ public class TaskFlow {
         String date = scanner.nextLine().trim();
 
         gestionnaire.gererEcheance(id, date);
+    }
+    // A.4 : Méthode dédiée à l'affichage des tâches
+    private static void afficherTaches() {
+        gestionnaire.afficherTaches();
     }
 
 }

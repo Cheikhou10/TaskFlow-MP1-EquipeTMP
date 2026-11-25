@@ -3,10 +3,12 @@ package ca.inf1763.equipetmp;
 import java.util.Scanner;
 
 public class TaskFlow {
-    private static final GestionnaireTaches gestionnaire = new GestionnaireTaches();
-    private static final Scanner scanner = new Scanner(System.in);
+    priate
+    static final Gesti
 
-    public static void main(String[] args) {
+        pubic
+
+    static void main(String[] args) {
         try {
             gestionnaire.recharger();
         } catch (Exception e) {
@@ -24,7 +26,7 @@ public class TaskFlow {
                         ajouterTache();
                         break;
                     case "2":
-                        gestionnaire.afficherTaches();
+                        afficherTaches(); // Utilise la méthode extraite par Aminata
                         break;
                     case "3":
                         marquerTerminee();
@@ -43,11 +45,12 @@ public class TaskFlow {
                         break;
                     default:
                         System.out.println("❌ Choix invalide.");
+                        break;
                 }
             } catch (NumberFormatException e) {
                 System.out.println("❌ Erreur : l'identifiant doit être un nombre.");
             } catch (Exception e) {
-                System.out.println("❌ Une erreur est survenue : " + e.getMessage());
+                System.out.println("Erreur : " + e.getMessage());
             }
         }
         scanner.close();
@@ -69,25 +72,22 @@ public class TaskFlow {
     private static void ajouterTache() {
         System.out.print("Titre : ");
         String titre = scanner.nextLine().trim();
-
+        
         System.out.print("Priorité (Basse/Normale/Elevee) [Normale] : ");
         String priorite = scanner.nextLine().trim();
-        if (priorite.isEmpty())
+        if (priorite.isEmpty()) {
             priorite = "Normale";
-
-        int id = gestionnaire.ajouterTache(titre, priorite);
-        System.out.println("Tâche ajoutée avec l'identifiant #" + id);
-
-        System.out.print("Échéance (AAAA-MM-JJ, vide pour ignorer) : ");
-        String date = scanner.nextLine().trim();
-        if (!date.isEmpty()) {
-            gestionnaire.gererEcheance(id, date);
         }
-    }
 
-    private static void marquerTerminee() {
-        System.out.print("Identifiant : ");
-        int id = Integer.parseInt(scanner.nextLine().trim());
+        i       System.out.println("Tâche ajoutée avec l'identifiant #" + id);
+
+        System.out.printString date = scanner.nextLine().trim();
+     
+
+           p
+
+           int id = Integer.parseInt(scanner.nextLine().trim());
+
         gestionnaire.marquerTerminee(id);
     }
 
@@ -105,5 +105,10 @@ public class TaskFlow {
         System.out.print("Date (AAAA-MM-JJ, vide pour retirer) : ");
         String date = scanner.nextLine().trim();
         gestionnaire.gererEcheance(id, date);
+    }
+
+    // A.4 : Méthode extraite par Aminata pour l'affichage
+    private static void afficherTaches() {
+        gestionnaire.afficherTaches();
     }
 }

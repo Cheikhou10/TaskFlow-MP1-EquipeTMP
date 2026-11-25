@@ -1,8 +1,8 @@
+package ca.inf1763.equipetmp;
 
 import java.util.Scanner;
 
 public class TaskFlow {
-
     private static final GestionnaireTaches gestionnaire = new GestionnaireTaches();
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -15,7 +15,6 @@ public class TaskFlow {
         }
 
         boolean continuer = true;
-
         while (continuer) {
             afficherMenu();
             String choix = scanner.nextLine().trim();
@@ -46,29 +45,27 @@ public class TaskFlow {
                     case "6":
                         gestionnaire.sauvegarder();
                         break;
-                    
+
                     case "7":
                         exporterExcel();
                         break;
-                        
+
                     case "0":
                         continuer = false;
                         System.out.println("Merci d'avoir utilisé TaskFlow. Au revoir !");
                         break;
 
                     default:
-                        System.out.println("Choix invalide. Veuillez choisir une option du menu.");
-                        break;
+                        System.out.println("❌ Choix invalide.");
                 }
-
             } catch (NumberFormatException e) {
-                System.out.println("Erreur : veuillez saisir un identifiant numérique valide.");
+                System.out.println("❌ Erreur : l'identifiant doit être un nombre.");
             } catch (Exception e) {
                 System.out.println("Une erreur est survenue : " + e.getMessage());
             }
         }
-
         scanner.close();
+        System.out.println("Merci d'avoir utilisé TaskFlow. Au revoir !");
     }
 
     private static void afficherMenu() {
@@ -96,8 +93,13 @@ public class TaskFlow {
         }
 
         int id = gestionnaire.ajouterTache(titre, priorite);
-
         System.out.println("Tâche ajoutée avec succès. Identifiant : #" + id);
+
+        System.out.print("Échéance (AAAA-MM-JJ, vide pour ignorer) : ");
+        String date = scanner.nextLine().trim();
+        if (!date.isEmpty()) {
+            gestionnaire.gererEcheance(id, date);
+        }
     }
 
     private static void marquerTerminee() {

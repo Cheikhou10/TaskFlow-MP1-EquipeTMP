@@ -1,3 +1,5 @@
+package ca.inf1763.equipetmp;
+
 import java.time.LocalDate;
 
 public class Tache {
@@ -15,14 +17,37 @@ public class Tache {
         this.terminee = false;
     }
 
-    public int getId() { return id; }
-    public String getTitre() { return titre; }
-    public String getPriorite() { return priorite; }
-    public void setPriorite(String priorite) { this.priorite = priorite; }
-    public LocalDate getEcheance() { return echeance; }
-    public void setEcheance(LocalDate echeance) { this.echeance = echeance; }
-    public boolean isTerminee() { return terminee; }
-    public void setTerminee(boolean terminee) { this.terminee = terminee; }
+    public int getId() {
+        return id;
+    }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public String getPriorite() {
+        return priorite;
+    }
+
+    public void setPriorite(String priorite) {
+        this.priorite = priorite;
+    }
+
+    public LocalDate getEcheance() {
+        return echeance;
+    }
+
+    public void setEcheance(LocalDate echeance) {
+        this.echeance = echeance;
+    }
+
+    public boolean isTerminee() {
+        return terminee;
+    }
+
+    public void setTerminee(boolean terminee) {
+        this.terminee = terminee;
+    }
 
     @Override
     public String toString() {

@@ -1,3 +1,5 @@
+package ca.inf1763.equipetmp;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -131,18 +133,18 @@ public class GestionnaireTaches {
                 break;
             }
         }
-        
+
         if (tacheTrouvee == null) {
             System.out.println("Erreur : aucune tâche ne possède l'identifiant #" + id + ".");
             return;
-        } 
-        
+        }
+
         if (date != null && date.isEmpty()) {
             tacheTrouvee.setEcheance(null);
             System.out.println("L'échéance de la tâche #" + id + " a été retirée.");
             return;
         }
-        
+
         if (date == null || !date.matches("\\d{4}-\\d{2}-\\d{2}")) {
             System.out.println("Erreur : la date doit être au format AAAA-MM-JJ.");
             return;
@@ -160,7 +162,7 @@ public class GestionnaireTaches {
             System.out.println("Erreur : la date saisie est invalide.");
             return;
         }
-        
+
         boolean avaitEcheance = tacheTrouvee.getEcheance() != null;
         tacheTrouvee.setEcheance(nouvelleDate);
 
@@ -208,7 +210,8 @@ public class GestionnaireTaches {
             String ligne;
             while ((ligne = reader.readLine()) != null) {
                 ligne = ligne.trim();
-                if (ligne.isEmpty()) continue;
+                if (ligne.isEmpty())
+                    continue;
 
                 String[] colonnes = ligne.split(";", -1);
                 if (colonnes.length < 5) {
@@ -244,7 +247,15 @@ public class GestionnaireTaches {
         }
     }
 
-    public List<Tache> getTaches() { return taches; }
-    public int getProchainId() { return prochainId; }
-    public void setProchainId(int id) { this.prochainId = id; }
+    public List<Tache> getTaches() {
+        return taches;
+    }
+
+    public int getProchainId() {
+        return prochainId;
+    }
+
+    public void setProchainId(int id) {
+        this.prochainId = id;
+    }
 }

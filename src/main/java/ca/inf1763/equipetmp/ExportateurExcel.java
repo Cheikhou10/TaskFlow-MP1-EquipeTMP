@@ -1,3 +1,5 @@
+package ca.inf1763.equipetmp;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -84,8 +86,7 @@ public class ExportateurExcel {
         } catch (IOException e) {
             System.out.println(
                     "Erreur lors de l'exportation. Vérifiez que le fichier n'est pas ouvert "
-                    + "et que vous avez les permissions nécessaires."
-            );
+                            + "et que vous avez les permissions nécessaires.");
         }
     }
 }

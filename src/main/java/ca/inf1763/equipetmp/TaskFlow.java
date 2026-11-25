@@ -20,13 +20,27 @@ public class TaskFlow {
 
             try {
                 switch (choix) {
-                    case "1": ajouterTache(); break;
-                    case "2": gestionnaire.afficherTaches(); break;
-                    case "3": marquerTerminee(); break;
-                    case "4": modifierPriorite(); break;
-                    case "5": gererEcheance(); break;
-                    case "6": gestionnaire.sauvegarder(); break;
-                    case "7": exporterExcel(); break;
+                    case "1": 
+                        ajouterTache(); 
+                        break;
+                    case "2": 
+                        afficherTaches(); // Utilise la methode extraite par Aminata
+                        break;
+                    case "3": 
+                        marquerTerminee(); 
+                        break;
+                    case "4": 
+                        modifierPriorite(); 
+                        break;
+                    case "5": 
+                        gererEcheance(); 
+                        break;
+                    case "6": 
+                        gestionnaire.sauvegarder(); 
+                        break;
+                    case "7": 
+                        exporterExcel(); // Methode de Fatima
+                        break;
                     case "0":
                         continuer = false;
                         System.out.println("Merci d'avoir utilise TaskFlow. Au revoir !");
@@ -60,7 +74,7 @@ public class TaskFlow {
     private static void ajouterTache() {
         System.out.print("Titre de la tache : ");
         String titre = scanner.nextLine().trim();
-
+        
         System.out.print("Priorite (Basse/Normale/Elevee) [Normale] : ");
         String priorite = scanner.nextLine().trim();
 
@@ -102,6 +116,12 @@ public class TaskFlow {
         gestionnaire.gererEcheance(id, date);
     }
 
+    // A.4 : Methode extraite par Aminata pour l'affichage
+    private static void afficherTaches() {
+        gestionnaire.afficherTaches();
+    }
+
+    // Methode de Fatima pour l'export Excel
     private static void exporterExcel() {
         System.out.print("Nom ou chemin du fichier Excel [taches.xlsx] : ");
         String chemin = scanner.nextLine().trim();

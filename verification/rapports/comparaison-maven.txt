@@ -1,0 +1,727 @@
+--- /c/Users/fatyg/TaskFlow-MP1-EquipeTMP/verification/references/01-liste-vide.txt	2026-11-26 01:29:30.366648600 -0500
++++ 01-liste-vide.txt	2026-11-26 01:51:49.730793800 -0500
+@@ -1,21 +1,24 @@
+-Aucun fichier de données : démarrage avec une liste vide.
++Aucun fichier de donnees : demarrage avec une liste vide.
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Aucune tâche à afficher.
++Votre choix : Aucune tache a afficher.
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Au revoir !
++Votre choix : Merci d'avoir utilise TaskFlow. Au revoir !
++Merci d'avoir utilise TaskFlow. Au revoir !
+[ECHEC] 01-liste-vide.txt
+--- /c/Users/fatyg/TaskFlow-MP1-EquipeTMP/verification/references/02-ajout-valide.txt	2026-11-26 01:29:30.365648300 -0500
++++ 02-ajout-valide.txt	2026-11-26 01:51:49.986644100 -0500
+@@ -1,32 +1,36 @@
+-Aucun fichier de données : démarrage avec une liste vide.
++Aucun fichier de donnees : demarrage avec une liste vide.
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Titre : Priorité (Basse/Normale/Élevée) [Normale] : Tâche ajoutée avec l'identifiant #1
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++Votre choix : Titre de la tache : Priorite (Basse/Normale/Elevee) [Normale] : Tache ajoutee avec succes. Identifiant : #1
++Echeance (AAAA-MM-JJ, vide pour ignorer) : 
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Liste des tâches :
+-#1 | Verifier le serveur | Normale | aucune | À faire
++Votre choix : Liste des taches :
++#1 | Verifier le serveur | Normale | aucune | A faire
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Au revoir !
++Votre choix : Merci d'avoir utilise TaskFlow. Au revoir !
++Merci d'avoir utilise TaskFlow. Au revoir !
+[ECHEC] 02-ajout-valide.txt
+--- /c/Users/fatyg/TaskFlow-MP1-EquipeTMP/verification/references/03-modifier-priorite.txt	2026-11-26 01:29:30.360641100 -0500
++++ 03-modifier-priorite.txt	2026-11-26 01:51:50.253359700 -0500
+@@ -1,42 +1,47 @@
+-Aucun fichier de données : démarrage avec une liste vide.
++Aucun fichier de donnees : demarrage avec une liste vide.
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Titre : Priorité (Basse/Normale/Élevée) [Normale] : Tâche ajoutée avec l'identifiant #1
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++Votre choix : Titre de la tache : Priorite (Basse/Normale/Elevee) [Normale] : Tache ajoutee avec succes. Identifiant : #1
++Echeance (AAAA-MM-JJ, vide pour ignorer) : 
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Identifiant : Nouvelle priorité (Basse/Normale/Élevée) : La priorité de la tâche #1 a été modifiée à Élevée.
++Votre choix : Identifiant de la tache : Nouvelle priorite (Basse/Normale/Elevee) : La priorite de la tache #1 a ete modifiee a Elevee.
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Liste des tâches :
+-#1 | Verifier le serveur | Élevée | aucune | À faire
++Votre choix : Liste des taches :
++#1 | Verifier le serveur | Elevee | aucune | A faire
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Au revoir !
++Votre choix : Merci d'avoir utilise TaskFlow. Au revoir !
++Merci d'avoir utilise TaskFlow. Au revoir !
+[ECHEC] 03-modifier-priorite.txt
+--- /c/Users/fatyg/TaskFlow-MP1-EquipeTMP/verification/references/04-gerer-echeance.txt	2026-11-26 01:29:30.367649300 -0500
++++ 04-gerer-echeance.txt	2026-11-26 01:51:50.531302800 -0500
+@@ -1,63 +1,70 @@
+-Aucun fichier de données : démarrage avec une liste vide.
++Aucun fichier de donnees : demarrage avec une liste vide.
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
++0. Quitter
++Votre choix : Titre de la tache : Priorite (Basse/Normale/Elevee) [Normale] : Tache ajoutee avec succes. Identifiant : #1
++Echeance (AAAA-MM-JJ, vide pour ignorer) : 
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
++0. Quitter
++Votre choix : Identifiant de la tache : Date (AAAA-MM-JJ, vide pour retirer l'echeance) : L'echeance de la tache #1 est fixee au 2027-01-15.
++
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
++0. Quitter
++Votre choix : Liste des taches :
++#1 | Verifier le serveur | Normale | 2027-01-15 | A faire
++
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
++0. Quitter
++Votre choix : Identifiant de la tache : Date (AAAA-MM-JJ, vide pour retirer l'echeance) : L'echeance de la tache #1 a ete retiree.
++
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
++0. Quitter
++Votre choix : Liste des taches :
++#1 | Verifier le serveur | Normale | aucune | A faire
++
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Titre : Priorité (Basse/Normale/Élevée) [Normale] : Tâche ajoutée avec l'identifiant #1
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
+-0. Quitter
+-Votre choix : Identifiant : Date (AAAA-MM-JJ, vide pour retirer) : L'échéance de la tâche #1 est fixée au 2027-01-15.
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
+-0. Quitter
+-Votre choix : Liste des tâches :
+-#1 | Verifier le serveur | Normale | 2027-01-15 | À faire
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
+-0. Quitter
+-Votre choix : Identifiant : Date (AAAA-MM-JJ, vide pour retirer) : L'échéance de la tâche #1 a été retirée.
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
+-0. Quitter
+-Votre choix : Liste des tâches :
+-#1 | Verifier le serveur | Normale | aucune | À faire
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
+-0. Quitter
+-Votre choix : Au revoir !
++Votre choix : Merci d'avoir utilise TaskFlow. Au revoir !
++Merci d'avoir utilise TaskFlow. Au revoir !
+[ECHEC] 04-gerer-echeance.txt
+--- /c/Users/fatyg/TaskFlow-MP1-EquipeTMP/verification/references/05-statut-termine.txt	2026-11-26 01:29:30.364648100 -0500
++++ 05-statut-termine.txt	2026-11-26 01:51:50.794484700 -0500
+@@ -1,52 +1,58 @@
+-Aucun fichier de données : démarrage avec une liste vide.
++Aucun fichier de donnees : demarrage avec une liste vide.
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Titre : Priorité (Basse/Normale/Élevée) [Normale] : Tâche ajoutée avec l'identifiant #1
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++Votre choix : Titre de la tache : Priorite (Basse/Normale/Elevee) [Normale] : Tache ajoutee avec succes. Identifiant : #1
++Echeance (AAAA-MM-JJ, vide pour ignorer) : 
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Identifiant : La tâche #1 a été marquée comme terminée.
++Votre choix : Identifiant de la tache : La tache #1 a ete marquee comme terminee.
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Liste des tâches :
+-#1 | Verifier le serveur | Normale | aucune | Terminée
++Votre choix : Liste des taches :
++#1 | Verifier le serveur | Normale | aucune | Terminee
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Identifiant : La tâche #1 est déjà terminée.
++Votre choix : Identifiant de la tache : La tache #1 est deja terminee.
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Au revoir !
++Votre choix : Merci d'avoir utilise TaskFlow. Au revoir !
++Merci d'avoir utilise TaskFlow. Au revoir !
+[ECHEC] 05-statut-termine.txt
+--- /c/Users/fatyg/TaskFlow-MP1-EquipeTMP/verification/references/06-sauvegarde.txt	2026-11-26 01:29:30.363647300 -0500
++++ 06-sauvegarde.txt	2026-11-26 01:51:51.085824900 -0500
+@@ -1,31 +1,35 @@
+-Aucun fichier de données : démarrage avec une liste vide.
++Aucun fichier de donnees : demarrage avec une liste vide.
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Titre : Priorité (Basse/Normale/Élevée) [Normale] : Tâche ajoutée avec l'identifiant #1
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++Votre choix : Titre de la tache : Priorite (Basse/Normale/Elevee) [Normale] : Tache ajoutee avec succes. Identifiant : #1
++Echeance (AAAA-MM-JJ, vide pour ignorer) : 
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Sauvegarde réussie : 1 tâche(s).
++Votre choix : Sauvegarde reussie : 1 tache(s).
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Au revoir !
++Votre choix : Merci d'avoir utilise TaskFlow. Au revoir !
++Merci d'avoir utilise TaskFlow. Au revoir !
+[ECHEC] 06-sauvegarde.txt
+--- /c/Users/fatyg/TaskFlow-MP1-EquipeTMP/verification/references/06-rechargement.txt	2026-11-26 01:29:30.364648100 -0500
++++ 06-rechargement.txt	2026-11-26 01:51:51.300558000 -0500
+@@ -1,22 +1,25 @@
+-Données rechargées : 1 tâche(s).
++Donnees rechargees : 1 tache(s).
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Liste des tâches :
+-#1 | Verifier le serveur | Basse | aucune | À faire
++Votre choix : Liste des taches :
++#1 | Verifier le serveur | Basse | aucune | A faire
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Au revoir !
++Votre choix : Merci d'avoir utilise TaskFlow. Au revoir !
++Merci d'avoir utilise TaskFlow. Au revoir !
+[ECHEC] 06-rechargement.txt
+--- /c/Users/fatyg/TaskFlow-MP1-EquipeTMP/verification/references/07-saisies-invalides.txt	2026-11-26 01:29:30.359642700 -0500
++++ 07-saisies-invalides.txt	2026-11-26 01:51:51.581789700 -0500
+@@ -1,82 +1,91 @@
+-Aucun fichier de données : démarrage avec une liste vide.
++Aucun fichier de donnees : demarrage avec une liste vide.
+ 
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
+-0. Quitter
+-Votre choix : Titre : Priorité (Basse/Normale/Élevée) [Normale] : Erreur : Le titre est obligatoire et ne peut pas être vide.
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
+-0. Quitter
+-Votre choix : Titre : Priorité (Basse/Normale/Élevée) [Normale] : Erreur : Priorité invalide. Choisissez Basse, Normale ou Elevee.
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
+-0. Quitter
+-Votre choix : Titre : Priorité (Basse/Normale/Élevée) [Normale] : Tâche ajoutée avec l'identifiant #1
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
+-0. Quitter
+-Votre choix : Identifiant : Erreur : aucune tâche ne possède l'identifiant #99.
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
+-0. Quitter
+-Votre choix : Identifiant : Nouvelle priorité (Basse/Normale/Élevée) : Erreur : priorité invalide. Choisissez Basse, Normale ou Élevée.
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
+-0. Quitter
+-Votre choix : Identifiant : Date (AAAA-MM-JJ, vide pour retirer) : Erreur : la date saisie est invalide.
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
+-0. Quitter
+-Votre choix : Liste des tâches :
+-#1 | Verifier le serveur | Normale | aucune | À faire
+-
+-=== MENU TASKFLOW ===
+-1. Ajouter une tâche
+-2. Afficher les tâches
+-3. Marquer comme terminée
+-4. Modifier la priorité
+-5. Gérer l'échéance
+-6. Sauvegarder
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
++0. Quitter
++Votre choix : Titre de la tache : Priorite (Basse/Normale/Elevee) [Normale] : Une erreur est survenue : Le titre est obligatoire et ne peut pas etre vide.
++
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
++0. Quitter
++Votre choix : Titre de la tache : Priorite (Basse/Normale/Elevee) [Normale] : Une erreur est survenue : Priorite invalide. Choisissez Basse, Normale ou Elevee.
++
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
++0. Quitter
++Votre choix : Titre de la tache : Priorite (Basse/Normale/Elevee) [Normale] : Tache ajoutee avec succes. Identifiant : #1
++Echeance (AAAA-MM-JJ, vide pour ignorer) : 
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
++0. Quitter
++Votre choix : Identifiant de la tache : Erreur : aucune tache ne possede l'identifiant #99.
++
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
++0. Quitter
++Votre choix : Identifiant de la tache : Nouvelle priorite (Basse/Normale/Elevee) : Erreur : priorite invalide. Choisissez Basse, Normale ou Elevee.
++
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
++0. Quitter
++Votre choix : Identifiant de la tache : Date (AAAA-MM-JJ, vide pour retirer l'echeance) : Erreur : la date saisie est invalide.
++
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
++0. Quitter
++Votre choix : Liste des taches :
++#1 | Verifier le serveur | Normale | aucune | A faire
++
++========== MENU TASKFLOW ==========
++1. Ajouter une tache
++2. Afficher les taches
++3. Marquer une tache comme terminee
++4. Modifier la priorite d'une tache
++5. Gerer l'echeance d'une tache
++6. Sauvegarder les taches
++7. Exporter les taches vers Excel
+ 0. Quitter
+-Votre choix : Au revoir !
++Votre choix : Merci d'avoir utilise TaskFlow. Au revoir !
++Merci d'avoir utilise TaskFlow. Au revoir !
+[ECHEC] 07-saisies-invalides.txt
+------------------------------
+8 verification(s) en echec.

@@ -1,0 +1,21 @@
+Aucun fichier de données : démarrage avec une liste vide.
+
+=== MENU TASKFLOW ===
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer comme terminée
+4. Modifier la priorité
+5. Gérer l'échéance
+6. Sauvegarder
+0. Quitter
+Votre choix : Aucune tâche à afficher.
+
+=== MENU TASKFLOW ===
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer comme terminée
+4. Modifier la priorité
+5. Gérer l'échéance
+6. Sauvegarder
+0. Quitter
+Votre choix : Au revoir !

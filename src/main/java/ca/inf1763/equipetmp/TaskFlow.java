@@ -20,30 +20,29 @@ public class TaskFlow {
 
             try {
                 switch (choix) {
-                    case "1": 
-                        ajouterTache(); 
+                    case "1":
+                        ajouterTache();
                         break;
-                    case "2": 
+                    case "2":
                         afficherTaches(); // Utilise la methode extraite par Aminata
                         break;
-                    case "3": 
-                        marquerTerminee(); 
+                    case "3":
+                        marquerTerminee();
                         break;
-                    case "4": 
-                        modifierPriorite(); 
+                    case "4":
+                        modifierPriorite();
                         break;
-                    case "5": 
-                        gererEcheance(); 
+                    case "5":
+                        gererEcheance();
                         break;
-                    case "6": 
-                        gestionnaire.sauvegarder(); 
+                    case "6":
+                        gestionnaire.sauvegarder();
                         break;
-                    case "7": 
+                    case "7":
                         exporterExcel(); // Methode de Fatima
                         break;
                     case "0":
                         continuer = false;
-                        System.out.println("Merci d'avoir utilise TaskFlow. Au revoir !");
                         break;
                     default:
                         System.out.println("Choix invalide.");
@@ -74,7 +73,7 @@ public class TaskFlow {
     private static void ajouterTache() {
         System.out.print("Titre de la tache : ");
         String titre = scanner.nextLine().trim();
-        
+
         System.out.print("Priorite (Basse/Normale/Elevee) [Normale] : ");
         String priorite = scanner.nextLine().trim();
 

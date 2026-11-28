@@ -1,0 +1,63 @@
+Aucun fichier de données : démarrage avec une liste vide.
+
+=== MENU TASKFLOW ===
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer comme terminée
+4. Modifier la priorité
+5. Gérer l'échéance
+6. Sauvegarder
+0. Quitter
+Votre choix : Titre : Priorité (Basse/Normale/Élevée) [Normale] : Tâche ajoutée avec l'identifiant #1
+
+=== MENU TASKFLOW ===
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer comme terminée
+4. Modifier la priorité
+5. Gérer l'échéance
+6. Sauvegarder
+0. Quitter
+Votre choix : Identifiant : Date (AAAA-MM-JJ, vide pour retirer) : L'échéance de la tâche #1 est fixée au 2027-01-15.
+
+=== MENU TASKFLOW ===
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer comme terminée
+4. Modifier la priorité
+5. Gérer l'échéance
+6. Sauvegarder
+0. Quitter
+Votre choix : Liste des tâches :
+#1 | Verifier le serveur | Normale | 2027-01-15 | À faire
+
+=== MENU TASKFLOW ===
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer comme terminée
+4. Modifier la priorité
+5. Gérer l'échéance
+6. Sauvegarder
+0. Quitter
+Votre choix : Identifiant : Date (AAAA-MM-JJ, vide pour retirer) : L'échéance de la tâche #1 a été retirée.
+
+=== MENU TASKFLOW ===
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer comme terminée
+4. Modifier la priorité
+5. Gérer l'échéance
+6. Sauvegarder
+0. Quitter
+Votre choix : Liste des tâches :
+#1 | Verifier le serveur | Normale | aucune | À faire
+
+=== MENU TASKFLOW ===
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer comme terminée
+4. Modifier la priorité
+5. Gérer l'échéance
+6. Sauvegarder
+0. Quitter
+Votre choix : Au revoir !

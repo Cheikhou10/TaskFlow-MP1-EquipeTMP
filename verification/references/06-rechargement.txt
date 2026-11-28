@@ -1,0 +1,22 @@
+Données rechargées : 1 tâche(s).
+
+=== MENU TASKFLOW ===
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer comme terminée
+4. Modifier la priorité
+5. Gérer l'échéance
+6. Sauvegarder
+0. Quitter
+Votre choix : Liste des tâches :
+#1 | Verifier le serveur | Basse | aucune | À faire
+
+=== MENU TASKFLOW ===
+1. Ajouter une tâche
+2. Afficher les tâches
+3. Marquer comme terminée
+4. Modifier la priorité
+5. Gérer l'échéance
+6. Sauvegarder
+0. Quitter
+Votre choix : Au revoir !

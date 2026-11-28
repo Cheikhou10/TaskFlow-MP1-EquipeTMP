@@ -145,7 +145,10 @@ public class GestionnaireTaches {
             return;
         }
 
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("uuuu-MM-dd").withResolverStyle(ResolverStyle.STRICT);
+        DateTimeFormatter format = DateTimeFormatter
+                .ofPattern("uuuu-MM-dd")
+                .withResolverStyle(ResolverStyle.STRICT);
+
         LocalDate nouvelleDate;
 
         try {
@@ -165,72 +168,24 @@ public class GestionnaireTaches {
         }
     }
 
+    // Refactoring A.6 : On délègue la sauvegarde à la classe PersistanceTaches
     public void sauvegarder() {
-        java.io.File dossier = new java.io.File("data");
-        if (!dossier.exists())
-            dossier.mkdirs();
-
-        try (java.io.PrintWriter writer = new java.io.PrintWriter("data/taches.csv")) {
-            for (Tache tache : taches) {
-                String echeance = (tache.getEcheance() == null) ? "" : tache.getEcheance().toString();
-                writer.println(tache.getId() + ";" + tache.getTitre() + ";" + tache.getPriorite() + ";" + echeance + ";"
-                        + tache.isTerminee());
-            }
-            System.out.println("Sauvegarde reussie : " + taches.size() + " tache(s).");
-        } catch (java.io.IOException e) {
-            System.out.println("Echec de la sauvegarde : " + e.getMessage());
-        }
+        PersistanceTaches.sauvegarder(taches);
     }
 
+    // Refactoring A.6 : On délègue le chargement à la classe PersistanceTaches
     public void recharger() {
-        java.io.File fichier = new java.io.File("data/taches.csv");
-        if (!fichier.exists()) {
-            System.out.println("Aucun fichier de donnees : demarrage avec une liste vide.");
-            return;
-        }
+        List<Tache> tachesChargees = PersistanceTaches.charger();
+        this.taches.clear();
+        this.taches.addAll(tachesChargees);
 
-        taches.clear();
         int identifiantMaximum = 0;
-
-        try (java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader(fichier))) {
-            String ligne;
-            while ((ligne = reader.readLine()) != null) {
-                ligne = ligne.trim();
-                if (ligne.isEmpty())
-                    continue;
-
-                String[] colonnes = ligne.split(";", -1);
-                if (colonnes.length < 5) {
-                    System.out.println("Ligne ignoree (format invalide) : " + ligne);
-                    continue;
-                }
-
-                int identifiant = Integer.parseInt(colonnes[0]);
-                String titre = colonnes[1];
-                String priorite = colonnes[2];
-                String echeanceTexte = colonnes[3];
-                boolean terminee = Boolean.parseBoolean(colonnes[4]);
-
-                Tache tache = new Tache(identifiant, titre);
-                tache.setPriorite(priorite);
-                if (!echeanceTexte.isEmpty()) {
-                    tache.setEcheance(java.time.LocalDate.parse(echeanceTexte));
-                }
-                tache.setTerminee(terminee);
-                taches.add(tache);
-
-                if (identifiant > identifiantMaximum) {
-                    identifiantMaximum = identifiant;
-                }
+        for (Tache t : this.taches) {
+            if (t.getId() > identifiantMaximum) {
+                identifiantMaximum = t.getId();
             }
-
-            prochainId = identifiantMaximum + 1;
-            System.out.println("Donnees rechargees : " + taches.size() + " tache(s).");
-        } catch (Exception e) {
-            System.out.println("Fichier illisible : " + e.getMessage());
-            taches.clear();
-            prochainId = 1;
         }
+        this.prochainId = identifiantMaximum + 1;
     }
 
     public List<Tache> getTaches() {
